@@ -14,4 +14,4 @@ Live demo: https://rubicon-challenge.emsmjc.com
 
 ## Additional info
 
-Bootstraped with Create-React-App (I usually prefer Next.js because of file-system routing)
+Bootstraped with Create-React-App (I usually prefer Next.js because of file-system routing and per-page code splitting)
