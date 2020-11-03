@@ -75,6 +75,8 @@ export const BannerImagePlaceholder = styled.div`
 export const DetailsTitle = styled.h1`
   font-size: 48px;
   margin-top: 20px;
+  display: flex;
+  align-items: center;
 `
 
 export const DetailsOverview = styled.p`

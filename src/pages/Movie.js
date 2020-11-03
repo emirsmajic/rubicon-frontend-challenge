@@ -1,6 +1,8 @@
+import { useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import Loader from "../components/Loader"
 import ThemeToggleButton from "../components/ThemeToggleButton"
+import VideoModal from "../components/VideoModal"
 import useDetails from "../hooks/useDetails"
 import {
   BannerContainer,
@@ -10,10 +12,12 @@ import {
   DetailsTitle,
 } from "../styles/cards"
 import { TabsContainer } from "../styles/header"
+import { PlayButton } from "../styles/utils"
 
 export default function Movie() {
   const { id } = useParams()
   const { data, isLoading, isError, error } = useDetails({ type: "movie", id })
+  const [modalOpen, setModalOpen] = useState(false)
 
   return (
     <div>
@@ -34,8 +38,18 @@ export default function Movie() {
               <BannerImagePlaceholder />
             )}
           </BannerContainer>
-          <DetailsTitle>{data.title || data.original_title}</DetailsTitle>
+          <DetailsTitle>
+            {data.title || data.original_title}{" "}
+            {data.videos[0] && (
+              <PlayButton onClick={(e) => setModalOpen(true)}>
+                &#9658; Play trailer
+              </PlayButton>
+            )}
+          </DetailsTitle>
           <DetailsOverview>{data.overview}</DetailsOverview>
+          {modalOpen && (
+            <VideoModal src={data.videos[0].key} setModalOpen={setModalOpen} />
+          )}
         </>
       )}
     </div>

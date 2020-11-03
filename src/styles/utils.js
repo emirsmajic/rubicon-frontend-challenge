@@ -43,3 +43,12 @@ export const Loader = styled.div`
     }
   }
 `
+
+export const PlayButton = styled.button`
+  font-weight: bold;
+  padding: 6px 8px;
+  border-radius: var(--border-radius);
+  color: var(--text-main);
+  margin-left: 12px;
+  background: var(--text-lightest);
+`
