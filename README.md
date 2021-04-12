@@ -1,6 +1,4 @@
-# Rubicon Frontend Challenge
-
-Live demo: https://cinemafour.emsmjc.com
+Live demo: https://cinemafour.emsmjc.dev
 
 ## How to install
 
